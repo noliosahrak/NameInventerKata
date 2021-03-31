@@ -20,3 +20,7 @@ class TestNameInverter:
     def test_should_return_empty_string_when_spaces_is_given(self, inverter):
         inverted = self.name_inverter.invert("      ")
         assert_that(inverted).is_equal_to("")
+
+    def test_should_return_inverted_first_and_last_name(self, inverter):
+        inverted = self.name_inverter.invert("Jan Kowalski")
+        assert_that(inverted).is_equal_to("Kowalski, Jan")
