@@ -24,3 +24,7 @@ class TestNameInverter:
     def test_should_return_inverted_first_and_last_name(self, inverter):
         inverted = self.name_inverter.invert("Jan Kowalski")
         assert_that(inverted).is_equal_to("Kowalski, Jan")
+
+    def test_should_return_inverted_first_and_last_name_without_honorific(self, inverter):
+        inverted = self.name_inverter.invert("Pan Jan Kowalski")
+        assert_that(inverted).is_equal_to("Kowalski, Jan")
