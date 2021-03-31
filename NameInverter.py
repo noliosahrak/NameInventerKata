@@ -4,4 +4,4 @@ class NameInverter:
         if name is None:
             raise ValueError
         else:
-            return name
+            return name.strip()
