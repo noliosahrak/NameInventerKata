@@ -6,7 +6,7 @@ def is_empty_or_spaces(name):
 
 
 class NameInverter:
-    honorific = {"Pan", "Pani", "Państwo", "Mr", "Mrs" "Ms"}
+    honorific = {"pan", "pani", "państwo", "mr", "mrs", "ms", "prof", "dr", "hab", "inż", "mgr"}
 
     def invert(self, name):
         if name is None:
@@ -19,7 +19,7 @@ class NameInverter:
             inverted.reverse()
             inverted_name = ""
             for el in inverted:
-                if el in self.honorific:
+                if el.lower() in self.honorific:
                     continue
                 inverted_name += el + ", "
             return inverted_name[0:-2]
